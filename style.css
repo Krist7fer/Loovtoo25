@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --muted-text: #555555;
+
+    --accent-color: #4a90e2;
+    --accent-hover: #357abd;
+
+    --border-color: #e0e0e0;
+    --card-bg: #f9f9f9;
+
+    --font-main: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+
+small {
+    color: var(--muted-text);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-hover);
+}
+
+button {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+input,
+textarea {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    padding: 0.6em;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2em;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em;
+}
