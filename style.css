@@ -9,95 +9,202 @@
 }
 
 :root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --muted-text: #555555;
-
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --muted-text: #aaaaaa;
     --accent-color: #4a90e2;
     --accent-hover: #357abd;
-
-    --border-color: #e0e0e0;
-    --card-bg: #f9f9f9;
-
+    --border-color: #333333;
+    --card-bg: #1e1e1e;
     --font-main: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
     font-family: var(--font-main);
-    font-size: 16px;
     line-height: 1.6;
-    background-color: var(--bg-color);
+    background: repeating-radial-gradient(rgb(0, 0, 0), rgb(0, 0, 20));
     color: var(--text-color);
+    font-size: 120%;
+    margin: 0;
+rgba(224, 224, 224, 0.5);
+}
+
+.layout {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    gap: 20px;
+}
+
+aside {
+    width: 220px;
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5em;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+aside nav ul {
+    list-style: none;
+}
+
+aside nav li {
+    margin-bottom: 1em;
+}
+
+aside nav button {
+    width: 100%;
+    padding: 0.75em 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+aside nav button:hover,
+aside nav button.active {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+section {
+    display: none;
+    margin-bottom: 2em;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+section.active {
+    display: block;
+}
+
+.section-btns {
+    margin-top: 2em;
+    display: flex;
+    gap: 1em;
+}
+
+.section-btns button {
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-btns button:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    line-height: 1.25;
-    margin-bottom: 0.5em;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.67em 0;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.5rem; }
+header {
+    font-size: 40px;
+    font-weight: 700;
+}
 
 p {
     margin-bottom: 1em;
-    color: var(--text-color);
 }
 
-small {
-    color: var(--muted-text);
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0.5em;
+        position: relative;
+        max-height: 100px;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+
+    aside nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
+
+    aside nav li {
+        margin-bottom: 0;
+    }
+
+    aside nav button {
+        flex: 0 0 auto;
+    }
+
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 1em;
+    }
+
+    .toggle-aside {
+        display: block;
+        background-color: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 0.75em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .toggle-aside:hover {
+        background-color: var(--accent-hover);
+    }
+
+    body.landscape aside {
+        display: none;
+    }
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: var(--accent-hover);
-}
-
-button {
-    font-family: var(--font-main);
-    font-size: 1rem;
-    padding: 0.6em 1.2em;
-    border-radius: 6px;
-    border: none;
-    background-color: var(--accent-color);
-    color: #ffffff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--accent-hover);
-}
-
-input,
-textarea {
-    font-family: var(--font-main);
-    font-size: 1rem;
-    padding: 0.6em;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-}
-
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.2em;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1em;
+@media (orientation: landscape) {
+    body.landscape aside {
+        display: none;
+    }
 }
