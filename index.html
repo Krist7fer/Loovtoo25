@@ -1,16 +1,165 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML5>
 <html lang="et">
-    <head>
-        <title>Loovtöö</title>
-        <meta name="Loovtöö" content="Privaatsed brauserid vms. Õpilane: Kristofer Nugis. Juhendaja: Kaspar Kiisk. Kool: Tallinna Laagna Gümnaasium. Aasta 2025.
-        Millised veebilehitsejad on privaatsed?">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>Loovtöö</header>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Loovtöö" content="Privaatsed brauserid vms. Õpilane: Kristofer Nugis. Juhendaja: Kaspar Kiisk. Kool: Tallinna Laagna Gümnaasium. Aasta 2025. Millised veebilehitsejad on privaatsed?">
+    <title>Loovtöö</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/29494ba1d2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="layout">
+    <aside>
+        <nav>
+            <ul id="navList">
+                <li><button data-section="0"><i class="fas fa-home"></i>Eesmärk</button></li>
+                <li><button data-section="1"><i class="fas fa-book"></i>Tööareng</button></li>
+                <li><button data-section="2"><i class="fas fa-cog"></i>Brauserid</button></li>
+                <li><button data-section="3"><i class="fas fa-star"></i>Tulemused</button></li>
+                <li><button data-section="4"><i class="fas fa-flag"></i>Kontaktinfo</button></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <section id="section0">
+            <h1 style="color: #357abd">LOOVTÖÖ TEEMA</h1>
+            <p><strong>—Mis on töö eesmärk?</strong></p>
+            <p>Uurimistöö eesmärk on välja selgitada, <em>millised veebibrauserid pakuvad internetis paremat privaatsust.</em></p>
+            <p>Veebibrauser (veebilehitseja) on programm, mille abil kasutaja saab vaadata veebilehti. Tuntumad brauserid on Mozilla Firefox, Microsoft Edge, Google Chrome ja Safari. Brauseri peamine ülesanne on kuvada serverilt saadud sisu – näiteks teksti, pilte, videoid ja nuppe – kasutajale arusaadaval ja interaktiivsel kujul.</p>
+            <p>Veebis surfamine ei ole alati turvaline või privaatne, sest jälgimine võib toimuda igal sammul. Selle ennetamiseks on tähtis turvaline ühendus (WiFi, DNS, VPN), ettevaatlik käitumine ja sobiv brauser. Selles töös keskendun ainult sellele, kuidas brauserid mõjutavad meie privaatsust ja millist infot nad serverile edastavad.</p>
+            <p>Valisin selle teema, sest mind huvitavad arvutid ja Internet ning pean privaatsust väga oluliseks.</p>
+        </section>
+
+        <section id="section1">
+            <h1 style="color: #357abd">TÖÖARENG</h1>
+            <p><strong>—Kuidas ma seda tegin?</strong></p>
+            <h2>1. Etapp – teadmiste omandamine</h2>
+            <p>Algul pidin omandama veebiarenduse põhiteadmised: HTML-i, CSS-i ja JavaScripti. HTML-i kasutatakse veebilehe struktuuri loomiseks, CSS-i kujunduse tegemiseks ning JavaScripti lehe funktsionaalsuse lisamiseks.</p>
+            <p>Nende keelte õppimiseks kasutasin Edube platvormi, kus on võimalik tasuta läbida erinevaid kursusi, sealhulgas veebiarenduse, Python’i, C++ ja inglise keele kursusi infotehnoloogidele. Veebiarenduse kursused pakkus JavaScript Institute, mis kuulub OpenEDG (Open Education and Development Group) alla – see on rahvusvaheline organisatsioon, mis pakub häid IT-alaseid õppekursusi ja sertifikaate.</p>
+            <h2>2. Etapp – veebilehe loomine</h2>
+            <p>Teises etapis lõin veebilehe, kasutades HTML-i, CSS-i ja JavaScripti. Koodi kirjutamiseks kasutasin programmi WebStorm, mis on JetBrains’i arenduskeskkond ja sobib hästi veebiarenduseks, pakudes palju lisafunktsioone - minu valik.</p>
+            <p>Veebilehe kujunduse ja sisu tegin ise. Lisaks kasutasin tasuta abivahendeid, nagu Google Fonts kirjatüüpide jaoks ja Font Awesome ikoone ja sümboleid.</p>
+            <h2>3. Etapp – veebilehe avaldamine ja andmete analüüs</h2>
+            <p>Valmis veebilehe failid laadisin Git’i ning avaldasin lehe Verceli platvormil, mis võimaldab veebilehti tasuta hostida. Pärast avaldamist kogus Vercel statistikat brauserite kohta.</p>
+            <p>Külastasin oma veebilehte erinevate brauserite, erirežiimide ja seadistustega ning analüüsisin kogutud andmeid. Selle põhjal hindasin, millised veebibrauserid edastavad serverile vähem infot ja pakuvad seeläbi paremat privaatsust. Turvalisuse tõttu ei ole kogu võimalik info Verceli kaudu kättesaadav.</p>
+            <p>Lisaks koostasin lühikokkuvõtte uuritud brauserite kohta (loomise eesmärk, arendaja ja üldine välimus).</p>
+        </section>
+
+        <section id="section2">
+            <h1 style="color: #357abd">BRAUSERID</h1>
+            <p><strong>—Milliseid veebilehitsejaid ma testin? Missugused nad on?</strong></p>
+            <p><strong>See tekst on tehisintellektiga genereeritud. Mudel: ChatGPT-5.2</strong></p>
+            <h2>Google Chrome</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2008</li>
+                <li><strong>Looja:</strong> Google</li>
+                <li><strong>Mootor:</strong> Chromium / Blink</li>
+                <li><strong>Iseloom:</strong> väga kiire, väga populaarne</li>
+                <li><strong>Avatud lähtekood:</strong> ei (ainult Chromium on)</li>
+                <li><strong>Eesmärk (reaalselt):</strong> maksimeerida Google’i teenuste ja reklaami efektiivsust</li>
+                <li><strong>Ausalt:</strong> sööb palju RAM-i; kogub ulatuslikult kasutusandmeid; privaatsus pole prioriteet – kasutaja on toode</li>
+            </ul>
+            <h2>Mozilla Firefox</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2002 (Firefox nime all 2004)</li>
+                <li><strong>Looja:</strong> Mozilla (Netscape’i järeltulija)</li>
+                <li><strong>Mootor:</strong> Gecko</li>
+                <li><strong>Iseloom:</strong> mõõdukalt kiire, hästi kohandatav</li>
+                <li><strong>Avatud lähtekood:</strong> jah</li>
+                <li><strong>Eesmärk (reaalselt):</strong> hoida veeb avatuna ja vältida täielikku Chromiumi monopol</li>
+                <li><strong>Ausalt:</strong> ei kogu nii agressiivselt andmeid kui Chrome, aga pole ka “täiuslikult privaatne”; veidi aeglasem ja vähem optimeeritud mõnel saidil</li>
+            </ul>
+
+            <h2>Microsoft Edge</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2015 (Chromiumi põhine alates 2020)</li>
+                <li><strong>Looja:</strong> Microsoft</li>
+                <li><strong>Mootor:</strong> Chromium / Blink</li>
+                <li><strong>Iseloom:</strong> kiire, Chrome’iga väga sarnane</li>
+                <li><strong>Avatud lähtekood:</strong> osaliselt</li>
+                <li><strong>Eesmärk (reaalselt):</strong> asendada Chrome Windowsis ja siduda kasutaja Microsofti teenustega</li>
+                <li><strong>Ausalt:</strong> kogub kasutusandmeid; parem kui Chrome RAM-i osas, aga privaatsus pole prioriteet</li>
+            </ul>
+
+            <h2>Safari</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2003</li>
+                <li><strong>Looja:</strong> Apple</li>
+                <li><strong>Mootor:</strong> WebKit</li>
+                <li><strong>Iseloom:</strong> väga sujuv ja energiasäästlik Apple’i seadmetes</li>
+                <li><strong>Avatud lähtekood:</strong> osaliselt</li>
+                <li><strong>Eesmärk (reaalselt):</strong> hoida kasutaja Apple’i ökosüsteemis</li>
+                <li><strong>Ausalt:</strong> väljaspool macOS/iOS-i praktiliselt mõttetu; vähem vabadust ja laiendeid</li>
+            </ul>
+
+            <h2>Vivaldi</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2015</li>
+                <li><strong>Looja:</strong> endine Opera juhtkond</li>
+                <li><strong>Mootor:</strong> Chromium / Blink</li>
+                <li><strong>Iseloom:</strong> ülimalt kohandatav, funktsiooniderohke</li>
+                <li><strong>Avatud lähtekood:</strong> osaliselt</li>
+                <li><strong>Eesmärk (reaalselt):</strong> anda kasutajale täielik kontroll brauseri üle</li>
+                <li><strong>Ausalt:</strong> võib tunduda “ülepakutud”; ikkagi Chromiumi peal</li>
+            </ul>
+
+            <h2>Brave</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2016</li>
+                <li><strong>Looja:</strong> Brendan Eich (JavaScripti looja)</li>
+                <li><strong>Mootor:</strong> Chromium / Blink</li>
+                <li><strong>Iseloom:</strong> kiire, reklaamid ja jälgijad vaikimisi kinni</li>
+                <li><strong>Avatud lähtekood:</strong> jah</li>
+                <li><strong>Eesmärk (reaalselt):</strong> privaatsus, aga oma reklaami- ja krüptomudeliga</li>
+                <li><strong>Ausalt:</strong> parem kui Chrome privaatsuses, kuid pole “puhas”; krüpto-funktsioonid pole kõigile</li>
+            </ul>
+
+            <h2>Mullvad Browser</h2>
+            <ul>
+                <li><strong>Loodud:</strong> 2023</li>
+                <li><strong>Looja:</strong> Mullvad + Tor Project</li>
+                <li><strong>Mootor:</strong> Gecko (Firefox ESR)</li>
+                <li><strong>Iseloom:</strong> äärmiselt range privaatsus</li>
+                <li><strong>Avatud lähtekood:</strong> jah</li>
+                <li><strong>Eesmärk (reaalselt):</strong> muuta kõik kasutajad võimalikult ühesuguseks, et neid ei saaks jälgida</li>
+                <li><strong>Ausalt:</strong> ebamugav tavakasutuseks; paljud saidid “ei tööta normaalselt”</li>
+            </ul>
+
+            <h2>LibreWolf</h2>
+            <ul>
+                <li><strong>Loodud:</strong> u 2020</li>
+                <li><strong>Looja:</strong> kogukondlik Firefoxi fork</li>
+                <li><strong>Mootor:</strong> Gecko</li>
+                <li><strong>Iseloom:</strong> Firefox ilma jälgimiseta</li>
+                <li><strong>Avatud lähtekood:</strong> jah</li>
+                <li><strong>Eesmärk (reaalselt):</strong> maksimaalne privaatsus ilma Torita</li>
+                <li><strong>Ausalt:</strong> vähem mugav kui tavaline Firefox; mõned funktsioonid teadlikult eemaldatud</li>
+            </ul>
+        </section>
+
+        <section id="section3">
+            <h1 style="color: #357abd">TULEMUSED</h1>
+            <p>Sisu puudub.</p>
+        </section>
+
+        <section id="section4">
+            <h1 style="color: #357abd">KONTAKTINFO</h1>
+            <p><strong>Loovtöö teema:</strong> Privaatsed veebibrauserid</p>
+            <p><strong>Aasta:</strong> 2025</p>
+            <p><strong>Loovtöö autor:</strong> Kristofer Nugis</p>
+            <p><strong>Loovtöö juhendaja:</strong> Kaspar Kiisk</p>
+            <p><strong>Kool:</strong>  Tallinna Laagna Gümnaasium</p>
+        </section>
+        <p><em><small>See leht kasutab Ubuntu kirjatüüpi - https://design.ubuntu.com/font</small></em></p>
+    </main>
+</div>
+</body>
 </html>
