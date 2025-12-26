@@ -29,26 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnContainer = document.createElement('div');
         btnContainer.classList.add('section-btns');
 
-        if (idx !== 0) {
-            const goUp = document.createElement('button');
-            goUp.innerHTML = '<i class="fas fa-arrow-up"></i>ÜLES';
-            goUp.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-            btnContainer.appendChild(goUp);
+        const goUp = document.createElement('button');
+        goUp.innerHTML = '<i class="fas fa-arrow-up"></i>ÜLES';
+        goUp.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        btnContainer.appendChild(goUp);
+
+        function updateGoUpButton() {
+            if (window.scrollY === 0) {
+                goUp.disabled = true;
+                goUp.style.opacity = "0.5";
+            } else {
+                goUp.disabled = false;
+                goUp.style.opacity = "1";
+            }
         }
 
-        if (idx === 0) {
-            const contactButton = document.createElement('button');
-            contactButton.innerHTML = 'KONTAKT';
-            contactButton.addEventListener('click', () => showSection(5));
-            btnContainer.appendChild(contactButton);
-        }
-
-        if (idx === 4) {
-            const backButton = document.createElement('button');
-            backButton.innerHTML = 'TAGASI';
-            backButton.addEventListener('click', () => showSection(0));
-            btnContainer.appendChild(backButton);
-        }
+        updateGoUpButton();
+        window.addEventListener('scroll', updateGoUpButton);
 
         if (idx < sections.length - 1) {
             const next = document.createElement('button');
