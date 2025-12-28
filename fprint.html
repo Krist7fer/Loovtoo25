@@ -1,0 +1,41 @@
+<!doctype html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8" />  
+    <title>Browser fingerprint test</title>  
+    <style>  
+      body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; }  
+      pre { background: #111; color: #0f0; padding: 1rem; overflow: auto; }  
+    </style>  
+  </head>  
+  <body>  
+    <h1>Browser fingerprint test</h1>  
+    <p>Below is the fingerprint your browser exposes to this site.</p>  
+  
+    <h2>Visitor ID</h2>  
+    <pre id="visitor-id">Loading…</pre>  
+  
+    <h2>Raw components</h2>  
+    <pre id="fingerprint-data">Loading…</pre>  
+  
+    <script type="module">  
+      // Load FingerprintJS from CDN  
+      const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4')  
+        .then(FingerprintJS => FingerprintJS.load());  
+  
+      fpPromise  
+        .then(fp => fp.get())  
+        .then(result => {  
+          const idEl = document.getElementById('visitor-id');  
+          const dataEl = document.getElementById('fingerprint-data');  
+  
+          idEl.textContent = result.visitorId; // stable browser fingerprint ID  
+          dataEl.textContent = JSON.stringify(result.components, null, 2);  
+        })  
+        .catch(err => {  
+          document.getElementById('visitor-id').textContent = 'Error loading fingerprint';  
+          console.error(err);  
+        });  
+    </script>  
+  </body>  
+</html>  
