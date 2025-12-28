@@ -1,19 +1,24 @@
 import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
+  try {
     if (req.method !== 'POST') {
-        res.status(405).json({ error: 'Method Not Allowed' });
-        return;
+      return res.status(405).json({ error: 'Method not allowed' });
     }
 
     const data = req.body;
     if (!data) {
-        res.status(400).json({ error: 'No data' });
-        return;
+      return res.status(400).json({ error: 'No data received' });
     }
 
     const key = `entry:${Date.now()}`;
-    await kv.set(key, data, { ex: 60 * 60 * 24 * 7 });
 
-    res.status(200).json({ success: true });
+    await kv.set(key, data);
+
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
 }
