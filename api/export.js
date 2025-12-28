@@ -1,9 +1,18 @@
 import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
-    const keys = await kv.keys('entry:*');
-    const data = await Promise.all(keys.map(key => kv.get(key)));
+  try {
+    const keys = await kv.lrange('entries', 0, -1);
 
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(JSON.stringify(data, null, 2));
+    const values = await Promise.all(
+      keys.map(async (key) => ({
+        key,
+        value: await kv.get(key),
+      }))
+    );
+
+    res.status(200).json(values);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 }
