@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fingerprint Test</title>
+
+  <script src="js/fp-5.0.1.min.js"></script>
+  <script src="js/clientjs-0.2.1.min.js"></script>
+  <script src="js/runner.js"></script>
+
+  <style>
+    body { font-family: monospace; background:#111; color:#eee; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+
+<h1>Browser Fingerprint Test</h1>
+
+<pre id="output">Waiting…</pre>
+<button id="download">Download JSON</button>
+
+
+  <footer style="margin-top:2em; font-size:0.9em; opacity:0.8;">
+    <p>
+      Uses <strong>FingerprintJS (OSS)</strong> — MIT License  
+      (<a href="https://github.com/fingerprintjs/fingerprintjs" target="_blank">source</a>)
+    </p>
+    <p>
+      Uses <strong>ClientJS</strong> — Apache License 2.0  
+      (<a href="https://github.com/jackspirou/clientjs" target="_blank">source</a>)  
+      No modifications made.
+    </p>
+    <p>
+      Purpose: educational browser fingerprinting comparison.
+    </p>
+</footer>
+
+</body>
+</html>
