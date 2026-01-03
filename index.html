@@ -76,16 +76,69 @@
 
         <section id="section2">
             <h1 style="color: #357abd">TÖÖARENG</h1>
-            <h2>1. Etapp – teadmiste omandamine</h2>
-            <p>Omandasin veebiarenduse põhiteadmised HTML-ist, CSS-ist ja JavaScript-ist. Kasutasin selleks Edube platvormi, kus saab tasuta läbida erinevaid IT-kursusi, sealhulgas JavaScript Institute kursusi.</p>
-            <h2>2. Etapp – veebilehe loomine</h2>
-            <p>Lõin oma veebilehe, kasutades õppitud keeli. Koodi kirjutasin programmis WebStorm, mis on spetsiaalselt veebiarenduseks loodud mugav tööriist. Kujunduse ja sisu tegin ise, kasutades ka tasuta vahendeid nagu Google Fonts ja Font Awesome.</p>
-            <h2>3. Etapp – veebilehe avaldamine ja andmete analüüs</h2>
-            <p>Avaldasin veebilehe Verceli platvormil, mis võimaldab tasuta hostimist. Külastades veebilehte erinevate brauserite eriversioonidega (nagu telefon ja arvuti), -režiimide ja ka sätetega.
-                Vercel kogub teabet, mida brauserid saadavad saiti külastades. Peale selle info analüüsimist saab järeldada millised veebilehitsejad on privaatsemad.</p>
-            <h2>Git (GitHub)</h2>
-            <p>Git on versioonihalduse süsteem, mis võimaldab arendajatel jälgida muudatusi koodis ning töötada sama projektiga samaaegselt ilma konflikte tekitamata. See võimaldab luua salvestuspunkte (commits), taastada varasemaid versioone ja hallata erinevaid arendusharusid.</p>
-            <p>GitHub on Gitil põhinev veebiplatvorm, kus saab projekte hoida pilves, teha koostööd, jagada koodi ja kasutada automatiseerimisvahendeid. GitHub lihtsustab Gitiga töötamist, pakkudes graafilist liidest, meeskonnatöö vahendeid ja projektihalduse funktsioone.</p>
+            <h2>1. JavaScript Institute kursus</h2>
+            <p>
+                JS Institute pakub kahte põhilist kursust veebiarenduse alustamiseks:
+                <strong>HTML Essentials</strong> ja <strong>CSS Essentials</strong>. Need kursused on mõeldud
+                algajatele, kes soovivad õppida veebilehtede loomise aluseid, ning need
+                valmistavad ette Web Development Essentials sertifikaadi sooritamiseks.
+            </p>
+            <p>
+                <strong>HTML Essentials</strong> kursus õpetab HTML-i põhistruktuuri, semantilisi elemente,
+                linke, pilte, tabeleid, vorme ning veebilehe ülesehituse loogikat.
+            </p>
+            <p>
+                <strong>CSS Essentials</strong> keskendub veebilehtede kujundamisele. Kursus katab CSS süntaksi,
+                valijad, värvid, fondid, box-mudeli, paigutussüsteemid (Flexbox, Grid),
+                animatsioonid ja responsiivse disaini põhimõtted.
+            </p>
+
+            <h2>2. Veebilehe loomine</h2>
+            <p>
+                Lõin oma veebilehe, kasutades õppitud keeli. Koodi kirjutasin programmis
+                WebStorm, mis on spetsiaalselt veebiarenduseks loodud mugav tööriist. Kujunduse
+                ja sisu tegin ise, kasutades ka tasuta vahendeid nagu
+                <a href="https://fonts.google.com" target="_blank">Google Fonts</a> ja
+                <a href="https://fontawesome.com" target="_blank">Font Awesome</a>.
+                Google Fontsist saab tasuta erinevaid kirjatüüpe ning Font Awesome pakub
+                ikoone, mis parandavad saidi väljanägemist.
+            </p>
+            <p>
+                Veebilehe aadress:
+                <a href="https://private-browsers.vercel.app" target="_blank">
+                    https://private-browsers.vercel.app
+                </a>
+            </p>
+
+            <h2>3. Andmete kogumine ja analüüs</h2>
+            <p>
+                GitHubis leidsin kaks tasuta kasutatavat koodibaasi, mis sobivad hästi
+                brauserite testimiseks:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://github.com/fingerprintjs/fingerprintjs" target="_blank">
+                        FingerprintJS
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jackspirou/clientjs" target="_blank">
+                        ClientJS
+                    </a>
+                </li>
+            </ul>
+
+            <p>
+                Genereerisin ChatGPT abil skripti, mis kasutab GitHubi koodi ja annab saidil
+                võimaluse alla laadida JSON-faili, mis sisaldab infot, mida FingerprintJS ja
+                ClientJS kasutaja kohta välja nühivad.
+            </p>
+            <p>
+                Kasutasin Pythoni skripti, et koondada JSON-failid suureks CSV-ks. Selle
+                analüüsimisel selgus, millised brauserid kaitsevad fingerprintingu eest kõige
+                paremini.
+            </p>
+
         </section>
 
         <section id="section3">
