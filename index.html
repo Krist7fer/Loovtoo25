@@ -38,33 +38,39 @@
     <main>
         <section id="section0">
             <h1 style="color: #357abd">Veebilehe loomine, privaatsed veebilehitsejad</h1>
-            <p><strong>Käesoleva töö eesmärk on õppida veebiarendust ning uurida, millised veebilehitsejad pakuvad parimat privaatsust.</strong></p>
-            <h2>Valiku põhjendus</h2>
-            <p>Mind huvitavad arvutid ja Internet ning loovtöö annab hea võimaluse süveneda nende teemadega. Otsustasin uurida veebilehitsejaid, sest soovin leida millised neist pakuvad parimat privaatsust ja turvalisust. Samuti on veebiarenduse õppimine mulle huvitav.</p>
-            <h2>Töö käik</h2>
-            <p>Õppisin veebiarenduse põhialuseid Edube platvormil, läbides JavaScript Institute kursuse. Selle käigus lõin oma veebilehe, kasutades HTML-i, CSS-i ja JavaScripti, ning hostisin selle tasuta Verceli platvormil. Samuti uurisin, kuidas veebibrauserid suhtlevad serveritega ning millist teavet nad edastavad.</p>
+            <p>Käesoleva töö eesmärk on õppida praktiliselt veebiarendust, luua ise toimiv veebileht ning uurida, kuidas veebilehitsejad kasutaja privaatsust kaitsevad, eriti seoses <em>browser fingerprintinguga</em>¹.
+            Veebiarendus on üks olulisemaid tehnoloogiaid, mis toetab kaasaegset suhtlust. Kõik arvutite ja Internetiga seotud tehnoloogiad mind huvitavad. Loovtöö on hea võimalus tekitada kasulikku kogemust... Plaanis on läbida Edube platvormil kursuseid, hostida veebisait Verceli abil ning kasutada avalikku tasuta koodi veebilehitsejate fingerprintingu vastaste tehnoloogiate testimiseks.</p>
+
+            <p>¹ <em>Browser fingerprinting</em> — veebilehitseja ning arvuti omaduste, käitumise põhjal kasutaja äratundmine.</p>
         </section>
 
         <section id="section1">
             <h1 style="color: #357abd">MÕISTED</h1>
-            <p><strong>Järgnev selgitav osa on koostatud tehisintellekti abiga, sest ise ei oska neid mõisteid nii detailselt seletada, kuid tunnen neid hästi.</strong></p>
             <h2>Veebilehitseja (brauser)</h2>
-            <p>See on programm, mida kasutad Internetis surfamiseks, näiteks Google Chrome, Firefox või Safari. See kuvab sinu ekraanil veebilehti arusaadaval kujul.</p>
+            <p>Veebilehitseja on programm, mis võimaldab kasutajal avada ja vaadata veebilehti. See tõlgendab HTML-, CSS- ja JavaScript-koodi ning kuvab selle kasutajale visuaalselt arusaadaval kujul. Näideteks on Chrome, Firefox ja Safari.</p>
+
             <h2>Veebileht</h2>
-            <p>Veebileht on Internetis olev dokument või lehekülg, mida brauser kuvab. See võib olla lihtne tekst ja pildid või keerukas, interaktiivne sait, kus saab näiteks suhelda või osta.</p>
+            <p>Veebileht on dokument, mis on loodud veebi keeltes ja mida server edastab brauserile. See võib sisaldada teksti, pilte, linke, videoid ja interaktiivsust. Veebilehtede kogum moodustab veebisaidi.</p>
+
             <h2>Server</h2>
-            <p>Server on võimas arvuti, mis talletab ja jagab Internetis sisu — näiteks veebilehti, pilte või videoid. Kui soovid midagi Internetist vaadata, saadab sinu arvuti päringu serverile, mis vastab ning saadab vajalikud andmed tagasi.</p>
+            <p>Server on arvuti või teenus, mis saadab veebilehti ja andmeid kasutajatele üle interneti. See töötleb päringuid ja tagastab vastused, näiteks HTML-failid või API andmed. Serverid töötavad pidevalt, et kasutajad saaksid sisu igal ajal kätte.</p>
+
             <h2>Hostimine</h2>
-            <p>Hostimine tähendab veebilehe või faili hoidmist serveris, et teised inimesed saaksid seda internetis vaadata. Veebilehe avaldamiseks peab see olema paigutatud serverisse, millel on pidev internetiühendus.</p>
+            <p>Hostimine on teenus, mis võimaldab veebilehtedel olla internetis kättesaadavad. Teenusepakkuja salvestab failid serveris ja tagab nende toimimise. Näiteks kasutavad inimesed hostimiseks teenuseid nagu Netlify, OVH või Zone.</p>
+
             <h2>Fingerprinting</h2>
-            <p>See on meetod, mille abil veebilehed või ettevõtted püüavad sind Internetis tuvastada — mitte nime järgi, vaid sinu seadme ja brauseri eriomaduste põhjal. See võib sisaldada infot näiteks brauseri tüübi, ekraanisuuruse ja kasutatavate fondide kohta.</p>
+            <p>Fingerprinting on tehnika, millega veebilehed koguvad kasutaja seadme ja brauseri unikaalseid tunnuseid tuvastamiseks. See ei vaja küpsiseid, sest põhineb süsteemi omadustel nagu GPU, fondid ja ekraanisuurus. Näited: Canvas fingerprinting, WebGL signatuurid, AudioContext fingerprinting.</p>
+
             <h2>Veebi keeled</h2>
-            <h3>HTML - Hyper Text Markup Language</h3>
-            <p>See on veebilehe struktuuri keel — see määrab, kus on pealkirjad, lõigud, pildid ja lingid.</p>
-            <h3>CSS - Cascading Style Sheets</h3>
-            <p>CSS vastutab veebilehe kujunduse eest — värvid, fondid, paigutus. Kui HTML on maja raam, siis CSS on selle värv ja sisustus.</p>
+
+            <h3>HTML – Hyper Text Markup Language</h3>
+            <p>HTML on veebi põhistruktuuri kirjeldav märgistuskeel. See määrab, millised elemendid nagu pealkirjad, lõigud, pildid ja lingid veebilehel asuvad. Brauser kasutab HTML-i, et veebileht üldse üles ehitada.</p>
+
+            <h3>CSS – Cascading Style Sheets</h3>
+            <p>CSS määrab veebilehe visuaalse välimuse, nagu värvid, paigutus ja fondid. Seda kasutatakse koos HTML-iga, et kujundada veebilehti atraktiivseks ja kasutajasõbralikuks. Näiteks saab CSS-iga muuta taustavärvi või joondada elemente.</p>
+
             <h3>JavaScript (JS)</h3>
-            <p>JS muudab veebilehed elavaks ja interaktiivseks — see võimaldab klikkida nuppe, mängida mänge või näha animatsioone.</p>
+            <p>JavaScript lisab veebilehele interaktiivsuse ja dünaamilise käitumise. See võimaldab reageerida kasutaja tegevustele, laadida andmeid või muuta lehe elemente ilma uuesti laadimiseta. Näiteks avanevad menüüd ja vormide kontroll töötavad sageli JavaScriptiga.</p>
 
         </section>
 
