@@ -2,13 +2,13 @@
 <html lang="et">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJYJBEZHD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-WJJYJBEZHD');
-</script>
+        gtag('config', 'G-WJJYJBEZHD');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Loovtöö" content="Privaatsed brauserid vms. Õpilane: Kristofer Nugis. Juhendaja: Kaspar Kiisk. Kool: Tallinna Laagna Gümnaasium. Aasta 2025. Millised veebilehitsejad on privaatsed?">
@@ -86,7 +86,170 @@
 
         <section id="section4">
             <h1 style="color: #357abd">TULEMUSED</h1>
-            <p>Sisu puudub.</p>
+            <h2>CHROMIUM– HALVIM ÜLDSE</h2>
+
+            <p>Chromiumil ei ole sisseehitatud anti-fingerprintingut.
+                Mitte “halb” – <strong>täiesti olematu</strong>.</p>
+
+            <p>Testi põhjal näeb:</p>
+
+            <ul>
+                <li>FingerprintJS visitorId ei muutunud sessioonide vahel üldse
+                    → st. täielik püsiv ja identne prindimuster.</li>
+                <li>ClientJS fingerprint oli ka seansside vahel sama
+                    → st. skriptide tasemel null kaitset.</li>
+            </ul>
+
+            <p>Chromium näitab ilma kaitseta:</p>
+
+            <ul>
+                <li>täpne ekraani resolutsioon</li>
+                <li>täpne OS versioon</li>
+                <li>kasutatud fontide komplekt</li>
+                <li>WebGL renderer ja GPU nimi</li>
+                <li>audio context fingerprint</li>
+                <li>canvas fingerprint täpselt sama</li>
+                <li>JS heap suurus, mälu, CPU tuumade arv</li>
+                <li>ping statistika, RTT</li>
+            </ul>
+
+            <p><strong>Miks Chromium on halb?</strong><br>
+                Sest Google ei näe privaatsust äriliselt kasulikuna. Chrome on maailma suurima reklaamifirma toode.
+                Anti-fingerprinting mõttes on see sisuliselt “avatud uksed” mõne kõige agressiivsema trackija ees.</p>
+
+            <h2>MS Edge</h2>
+
+            <p>Edge on täielikult Chrome’i kloon, ainult:</p>
+
+            <ul>
+                <li>natuke rangem SmartScreen</li>
+                <li>natuke rohkem sandboxi</li>
+                <li>veidi piiranguid, kui “tracking protection” on High</li>
+            </ul>
+
+            <p>Test ütleb:</p>
+
+            <ul>
+                <li>FingerprintJS VisitorId ei muutu sessioonide vahel</li>
+                <li>ClientJS Fingerprint ei muutu sessioonide vahel
+                    → See tähendab: sama lihtsasti fingerprintitav kui Chrome.</li>
+            </ul>
+
+            <p><strong>Edge lisab:</strong></p>
+
+            <ul>
+                <li>Microsofti enda telemeetriat</li>
+                <li>Microsofti reklaamid</li>
+                <li>Bing integratsiooni</li>
+            </ul>
+
+            <p>See muudab olukorra tegelikult halvemaks, kui soovid privaatsust.</p>
+
+            <h2>Opera</h2>
+
+            <p>Opera müüs end Hiina konsortsiumile ja:</p>
+
+            <ul>
+                <li>Opera serveritega toimub pidev taustsünkroon</li>
+                <li>Opera VPN ei ole VPN, vaid proxy, mis käib läbi Vpn gateways (tihti trackitakse)</li>
+                <li>Anti-fingerprintingu mehhanismi pole olemas</li>
+                <li>Sinu CSV põhjal: jällegi igas sessioonis sama fingerprint</li>
+            </ul>
+
+            <p>Opera näitab sama infot kui Chrome, lisaks:</p>
+
+            <ul>
+                <li>seadme resolutsioon</li>
+                <li>fontide komplekt</li>
+                <li>audio fingerprint</li>
+                <li>canvas fingerprint</li>
+                <li>WebGL fingerprint</li>
+                <li>GPU nimi</li>
+            </ul>
+
+            <p>Opera on <strong>pigem hullem kui Chrome</strong>, sest lisaks FP-le on neil oma "built-in analytics".</p>
+
+            <p>Chromium eksponeerib veebilehtedele:</p>
+
+            <ul>
+                <li>täpne süsteemi fontide loend,</li>
+                <li>GPU/WebGL signatuurid,</li>
+                <li>brauseri ja OS-i täis-User-Agent,</li>
+                <li>ekraanisuuruse täpsed väärtused,</li>
+                <li>kõik WebRTC andmed,</li>
+                <li>pluginate ja codec-ide infot.</li>
+            </ul>
+
+            <p>Chromiumi puhul <strong>ei toimu normaliseerimist ega randomiseerimist</strong> – iga väärtus, mis on sinu riistvara konfiguratsioonist saadav, jõuab trackeriteni. See on põhjus, miks Chrome ja temapõhised brauserid (Edge, Opera, Vivaldi jne) olid sinu testides <strong>ühed kõige stabiilsemad ja unikaalsemad</strong> fingerprintid – st brauser ei püüa sind mingil moel varjata.</p>
+
+            <p>Lisaks ei eemalda Chromium telemeetriat ega privaatsusandmete kogumist – brauser “lekib” peaaegu kõike, mida veebilehed võiksid soovida kasutada tuvastamiseks.</p>
+
+            <p>Seetõttu on Chromium-baasil brauserid anti-fingerprinting seisukohalt <strong>halvimad valikud</strong>.</p>
+
+            <h2><strong>Brave Browser</strong> – osaline ja üksnes minimaalne anti-fingerprinting</h2>
+
+            <p>Brave põhineb Chromiumil, aga lisab oma “Shields” ja teatud anti-tracking kaitsed. Testid näitasid, et Brave’i fingerprintid olid <strong>sama profiili ja sessiooni puhul stabiilsed</strong>, isegi privaatses aknas. See tähendab, et Brave <strong>ei loo iga seansi jaoks erinevat identiteeti</strong> – brauser näeb välja sama tema fingerprinti genereerivate testide jaoks.</p>
+
+            <p>Brave’i eesmärk ei ole muuta iga kasutajat sama näoga massiks, vaid vähendada parameetrite hulka, mis võivad kergesti tuvastada sind kui unikaalset seadet. See toimub nii:</p>
+
+            <ul>
+                <li>Brave blokeerib vaikimisi reklaamija ja kolmanda osapoole trackerite päringud;</li>
+                <li>brauser võib <strong>randomiseerida teatud väiksemaid API vastuseid</strong>, nt canvas/WebGL mõningaid signatuure, nii et mõningad skriptipõhised fingerprintid võivad erineda;</li>
+                <li>see blokeerib kolmanda osapoole küpsiseid ja teatud telemeetriat.</li>
+            </ul>
+
+            <p>See kõlab hästi, aga tõsiasi on see, et Brave’i anti-fingerprinting <strong>ei standardiseeri ega ühenda kõiki Brave kasutajaid ühte suuresse “anonymity set’i”</strong>. See raskendab küll mõnda lihtsat fingerprinti (nt User-Agent), kuid <strong>sügavad parameetrid nagu GPU või fontide loend jäävad nähtavaks</strong>. Seetõttu võib Brave’i kasutaja olla küll vähem jälgitav, kuid <strong>pikaajaline fingerprint jääb püsima</strong>.</p>
+
+            <p>Brave kasutab ka liikuvaid või domeenipõhiseid muutusi, kus brauser võib iga domeeni külastuse korral varjata või muuta mõnda väärtust, kuid <strong>see ei taga universaalset anonüümsust</strong>. See on pigem <strong>anti-tracking, mitte anti-fingerprinting</strong> lahendus.</p>
+
+            <h2><strong>Firefox (tavaline)</strong> – keskpärane ja konfigureeritav</h2>
+
+            <p>Firefox integreerib oma tuuma sisse mitmeid privaatsusmeetmeid, millest kõige tähtsam on <strong>privacy.resistFingerprinting</strong> seade (about:config). See muudab brauseri andmeid vähem eristuvaks. Firefoxi privaatsustehnoloogiad:</p>
+
+            <ul>
+                <li>ajavööndi normaliseerimine;</li>
+                <li>ekraani mõõtmete “letterboxing”;</li>
+                <li>User-Agent’i üldistamine;</li>
+                <li>graafika-API vastuste moonutamine.</li>
+            </ul>
+
+            <p>Mozilla sõnul need kaitsed vähendavad oluliselt fingerprinti unikaalsust ning toimivad koos <strong>Enhanced Tracking Protection</strong> ja RFP süsteemiga.</p>
+
+            <p>Firefoxi tugevus on see, et RFP-d saab käsitsi lubada, muutes brauseri sarnasemaks Tor Browserile. Miinuseks on see, et vaikimisi RFP <strong>pole täielikult lubatud</strong> ning olulised süsteemi detailid võivad endiselt lekkida.</p>
+
+            <h2><strong>LibreWolf</strong> – tugev Firefoxi fork</h2>
+
+            <p>LibreWolf eemaldab telemeetria ja kõvasti karmistab Firefoxi privaatsusseadeid. See sisaldab:</p>
+
+            <ul>
+                <li>telemeetria eemaldamist;</li>
+                <li>agressiivseid küpsisepoliitikaid ja trackerite blokeerimist;</li>
+                <li><strong>resistFingerprinting</strong> kasutamist laiemalt;</li>
+                <li>uBlock Origin integreeritult.</li>
+            </ul>
+
+            <p>LibreWolf <strong>piirab paljusid fingerprintingu andmepunkte</strong>, kuigi ei tee kasutajaid täielikult homogeenseks. Suurem osa identifikaatoreid on üldistatud või moonutatud.</p>
+
+            <p>Testide põhjal on LibreWolf <strong>märgatavalt parem kui Chrome/Edge</strong>, kuid mitte nii homogeenne kui Mullvad või Tor.</p>
+
+            <h2><strong>Mullvad Browser</strong> – põhimõtteliselt Tor Browser ilma Tor-võrguta</h2>
+
+            <p>Mullvad Browser paistab testides silma, sest kasutab sama anti-fingerprinting tuuma kui Tor Browser, kuid ilma Tor võrguta. Olulised omadused:</p>
+
+            <ol>
+                <li><strong>resistFingerprinting</strong> on vaikimisi sees ja laialdaselt rakendatud;</li>
+                <li><strong>User-Agent ja OS info on standardiseeritud</strong>;</li>
+                <li><strong>piiratud fontide komplekt</strong>, mitte süsteemsed fondid;</li>
+                <li>mitmed API väärtused <strong>muutuvad iga seansiga</strong>;</li>
+                <li>väga tugev anti-tracking konfiguratsioon uBlock Originiga;</li>
+                <li>riistvara API-d on moonutatud või piiratud;</li>
+                <li>ekraani mõõtmete <strong>letterboxing</strong>;</li>
+                <li>kõik aknad on privaatsed.</li>
+            </ol>
+
+            <p>Mullvad Browseri eesmärk on luua <strong>mass homogeneous set</strong> – kõik kasutajad näevad välja võimalikult identsed. Testid näitasid, et Mullvad Browseri fingerprintid kas olid identsed teiste kasutajatega või muutusid iga seansiga nii, et neid oli raske püsivalt seostada.</p>
+
+            <p>Seetõttu peetakse Mullvad Browserit üheks <strong>kõige tõhusamaks anti-fingerprinting brauseriks</strong> väljaspool Tor Browserit.</p>
         </section>
         <p><em><small>See leht kasutab Ubuntu kirjatüüpi - <a href="https://design.ubuntu.com/font" style="color: white">https://design.ubuntu.com/font</a></small></em></p>
     </main>
